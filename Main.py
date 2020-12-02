@@ -24,20 +24,24 @@ def add_game_stats():
     # record yellow cards
     y_card = str(input())
     if y_card == 'y':
-        game.append(1)
-    if y_card == 'n':
+        print('Did you receive one or two yellow cards? Enter 1 or 2')
+        if int(input()) == 1:
+            game.append(1)
+        else:
+            game.append(2)
+    elif y_card == 'n':
         game.append(0)
-    if y_card != 'y' or y_card != 'n':
+    else:
         print("Please enter either Y or N")
 
     # Records red card
-    print("Did you receive any red cards? Y/N")
+    print("Did you receive a red card? Y/N")
     r_card = str(input())
     if r_card == 'y':
         game.append(1)
-    if r_card == 'n':
+    elif r_card == 'n':
         game.append(0)
-    if r_card != 'y' or r_card != 'n':
+    else:
         print("Please enter either Y or N")
 
     game_list.append(game)
